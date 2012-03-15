@@ -1,0 +1,28 @@
+#ct, #cl, #cr, #cb {
+	width: 200px;
+}
+
+.modalContent-outer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.modalContent {
+	position: relative;
+	border: 2px solid red;
+	background: #ff8855;
+	padding: 20px;
+}
+.modalContent-top {
+	margin: 100px auto 0;
+}
+.modalContent-bottom {
+	margin: 100px auto 0;
+}
+.modalContent-left {
+	margin: 100px auto 0;
+}
+.modalContent-right {
+	margin: 100px auto 0;
+}

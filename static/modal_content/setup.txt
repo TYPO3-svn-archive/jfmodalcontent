@@ -1,0 +1,16 @@
+plugin.tx_jfmodalcontent_pi1 {
+	jQueryNoConflict = {$plugin.tx_jfmodalcontent_pi1.jQueryNoConflict}
+	jsInFooter = {$plugin.tx_jfmodalcontent_pi1.jsInFooter}
+	jsMinify = {$plugin.tx_jfmodalcontent_pi1.jsMinify}
+	jsInline = {$plugin.tx_jfmodalcontent_pi1.jsInline}
+	cssMinify = {$plugin.tx_jfmodalcontent_pi1.cssMinify}
+
+	templateFileJS = {$plugin.tx_jfmodalcontent_pi1.file.templateFileJS}
+	jQueryLibrary = {$plugin.tx_jfmodalcontent_pi1.file.jQueryLibrary}
+	jQueryEasing = {$plugin.tx_jfmodalcontent_pi1.file.jQueryEasing}
+	modalContentJS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentJS}
+	modalContentCSS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentCSS}
+
+	_CSS_DEFAULT_STYLE (
+)
+}

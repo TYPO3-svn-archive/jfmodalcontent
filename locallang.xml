@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'jfmodalcontent'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi1_title">Modal Content</label>
+			<label index="pi1_plus_wiz_description">Create a modal content</label>
+
+			<label index="extmng.classInnerHeader">Warning!</label>
+			<label index="extmng.classInner">You have to use the "Update"-Button below to ensure proper working for all functions in this extension.</label>
+		</languageKey>
+	</data>
+</T3locallang>

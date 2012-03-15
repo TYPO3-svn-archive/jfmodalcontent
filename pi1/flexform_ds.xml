@@ -1,0 +1,325 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<general>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.sheet_general</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<inAnimation>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.top</numIndex>
+										<numIndex index="1">top</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.left</numIndex>
+										<numIndex index="1">left</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.right</numIndex>
+										<numIndex index="1">right</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.bottom</numIndex>
+										<numIndex index="1">bottom</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</inAnimation>
+
+					<inDelay>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inDelay</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<max>6</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</inDelay>
+					<inTransition>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inTransition</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.pi_flexform.from_ts</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Swing</numIndex>
+										<numIndex index="1">swing</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Linear</numIndex>
+										<numIndex index="1">linear</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Quad</numIndex>
+										<numIndex index="1">Quad</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">Cubic</numIndex>
+										<numIndex index="1">Cubic</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">Quart</numIndex>
+										<numIndex index="1">Quart</numIndex>
+									</numIndex>
+									<numIndex index="6" type="array">
+										<numIndex index="0">Quint</numIndex>
+										<numIndex index="1">Quint</numIndex>
+									</numIndex>
+									<numIndex index="7" type="array">
+										<numIndex index="0">Sine</numIndex>
+										<numIndex index="1">Sine</numIndex>
+									</numIndex>
+									<numIndex index="8" type="array">
+										<numIndex index="0">Expo</numIndex>
+										<numIndex index="1">Expo</numIndex>
+									</numIndex>
+									<numIndex index="9" type="array">
+										<numIndex index="0">Circ</numIndex>
+										<numIndex index="1">Circ</numIndex>
+									</numIndex>
+									<numIndex index="10" type="array">
+										<numIndex index="0">Back</numIndex>
+										<numIndex index="1">Back</numIndex>
+									</numIndex>
+									<numIndex index="11" type="array">
+										<numIndex index="0">Bounce</numIndex>
+										<numIndex index="1">Bounce</numIndex>
+									</numIndex>
+									<numIndex index="12" type="array">
+										<numIndex index="0">Elastic</numIndex>
+										<numIndex index="1">Elastic</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</inTransition>
+					<inTransitiondir>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inTransitiondir</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.pi_flexform.from_ts</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">In</numIndex>
+										<numIndex index="1">In</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Out</numIndex>
+										<numIndex index="1">Out</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">InOut</numIndex>
+										<numIndex index="1">InOut</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</inTransitiondir>
+					<inTransitionduration>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inTransitionduration</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<max>6</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</inTransitionduration>
+
+					<outDelay>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.outDelay</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<max>6</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</outDelay>
+					<outTransition>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.outTransition</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.pi_flexform.from_ts</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Swing</numIndex>
+										<numIndex index="1">swing</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Linear</numIndex>
+										<numIndex index="1">linear</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Quad</numIndex>
+										<numIndex index="1">Quad</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">Cubic</numIndex>
+										<numIndex index="1">Cubic</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">Quart</numIndex>
+										<numIndex index="1">Quart</numIndex>
+									</numIndex>
+									<numIndex index="6" type="array">
+										<numIndex index="0">Quint</numIndex>
+										<numIndex index="1">Quint</numIndex>
+									</numIndex>
+									<numIndex index="7" type="array">
+										<numIndex index="0">Sine</numIndex>
+										<numIndex index="1">Sine</numIndex>
+									</numIndex>
+									<numIndex index="8" type="array">
+										<numIndex index="0">Expo</numIndex>
+										<numIndex index="1">Expo</numIndex>
+									</numIndex>
+									<numIndex index="9" type="array">
+										<numIndex index="0">Circ</numIndex>
+										<numIndex index="1">Circ</numIndex>
+									</numIndex>
+									<numIndex index="10" type="array">
+										<numIndex index="0">Back</numIndex>
+										<numIndex index="1">Back</numIndex>
+									</numIndex>
+									<numIndex index="11" type="array">
+										<numIndex index="0">Bounce</numIndex>
+										<numIndex index="1">Bounce</numIndex>
+									</numIndex>
+									<numIndex index="12" type="array">
+										<numIndex index="0">Elastic</numIndex>
+										<numIndex index="1">Elastic</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</outTransition>
+					<outTransitiondir>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.outTransitiondir</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.pi_flexform.from_ts</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">In</numIndex>
+										<numIndex index="1">In</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Out</numIndex>
+										<numIndex index="1">Out</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">InOut</numIndex>
+										<numIndex index="1">InOut</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</outTransitiondir>
+					<outTransitionduration>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.outTransitionduration</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<max>6</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</outTransitionduration>
+				</el>
+			</ROOT>
+		</general>
+		<special>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.sheet_options</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<options>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.options</label>
+							<config>
+								<type>text</type>
+								<wrap>OFF</wrap>
+								<cols>48</cols>
+								<rows>10</rows>
+							</config>
+						</TCEforms>
+					</options>
+					<optionsOverride>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.optionsOverride</label>
+							<config>
+								<type>check</type>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</optionsOverride>
+				</el>
+			</ROOT>
+		</special>
+	</sheets>
+</T3DataStructure>
+

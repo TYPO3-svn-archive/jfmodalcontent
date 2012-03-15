@@ -1,0 +1,12 @@
+
+# cat=basic/enable/10; type=boolean; label=Enable FE-Errormessages: If set, messages in case of missing templates are displayed in FE (Turn of in production)
+frontendErrorMsg = 1
+
+# cat=basic/enable/20; type=boolean; label=Enable select instead of checkbox: If set, most of checkboxes will turn into selectboxes, so you can choose "from TS"
+useSelectInsteadCheckbox = 0
+
+
+
+# cat=basic/dev/1000; type=user[EXT:jfmodalcontent/lib/class.tx_jfmodalcontent_tsparserext.php:tx_jfmodalcontent_tsparserext->displayMessage]; label=Updater
+updateMessage = 0
+

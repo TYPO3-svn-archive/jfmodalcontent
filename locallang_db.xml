@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'jfmodalcontent'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">Modal Content</label>
+			<label index="tt_content.tx_jfmodalcontent.sheet_general">General</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation">Animation</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.top">Top</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.left">Left</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.right">Right</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.bottom">Bottom</label>
+			<label index="tt_content.tx_jfmodalcontent.inDelay">IN - Delay</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransition">IN - Type of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransitiondir">IN - Direction of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransitionduration">IN - Duration of transition (in ms)</label>
+			<label index="tt_content.tx_jfmodalcontent.outDelay">OUT - Delay</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransition">OUT - Type of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransitiondir">OUT - Direction of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransitionduration">OUT - Duration of transition (in ms)</label>
+			<label index="tt_content.tx_jfmodalcontent.sheet_options">Options</label>
+			<label index="tt_content.tx_jfmodalcontent.options">Insert your own options</label>
+			<label index="tt_content.tx_jfmodalcontent.optionsOverride">Override all options</label>
+
+			<label index="tt_content.pi_flexform.from_ts">From Typoscript</label>
+			<label index="tt_content.pi_flexform.no">No</label>
+			<label index="tt_content.pi_flexform.yes">Yes</label>
+		</languageKey>
+	</data>
+</T3locallang>
