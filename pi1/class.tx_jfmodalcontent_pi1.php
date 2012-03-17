@@ -88,17 +88,17 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			// It's a content, all data from flexform
 			$this->lConf['inAnimation']  = $this->getFlexformData('general', 'inAnimation');
 			$this->lConf['content']      = $this->getFlexformData('general', 'content');
-			$this->lConf['contentWidth'] = $this->getFlexformData('general', 'width');
+			$this->lConf['contentWidth'] = $this->getFlexformData('general', 'contentWidth');
 
 			$this->lConf['inDelay']              = $this->getFlexformData('inAnimation', 'inDelay');
 			$this->lConf['inTransition']         = $this->getFlexformData('inAnimation', 'inTransition');
 			$this->lConf['inTransitiondir']      = $this->getFlexformData('inAnimation', 'inTransitiondir');
 			$this->lConf['inTransitionduration'] = $this->getFlexformData('inAnimation', 'inTransitionduration');
 
-			$this->lConf['outDelay']              = $this->getFlexformData('inAnimation', 'outDelay');
-			$this->lConf['outTransition']         = $this->getFlexformData('inAnimation', 'outTransition');
-			$this->lConf['outTransitiondir']      = $this->getFlexformData('inAnimation', 'outTransitiondir');
-			$this->lConf['outTransitionduration'] = $this->getFlexformData('inAnimation', 'outTransitionduration');
+			$this->lConf['outDelay']              = $this->getFlexformData('outAnimation', 'outDelay');
+			$this->lConf['outTransition']         = $this->getFlexformData('outAnimation', 'outTransition');
+			$this->lConf['outTransitiondir']      = $this->getFlexformData('outAnimation', 'outTransitiondir');
+			$this->lConf['outTransitionduration'] = $this->getFlexformData('outAnimation', 'outTransitionduration');
 
 			$this->lConf['options']         = $this->getFlexformData('special', 'options');
 			$this->lConf['optionsOverride'] = $this->getFlexformData('special', 'optionsOverride');
