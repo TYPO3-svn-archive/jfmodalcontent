@@ -27,7 +27,7 @@ plugin.tx_jfmodalcontent_pi1 {
 	file.jQueryEasing = EXT:jfmodalcontent/res/jquery/js/jquery.easing-1.3.js
 
 	# cat=plugin.tx_jfmodalcontent/file/050; type=file[js]; label=anythingSlider JS-File: Location of the anythingSlider JS-file
-	file.modalContentJS = EXT:jfmodalcontent/res/jquery/js/jquery.modalContent-0.1.js
+	file.modalContentJS = EXT:jfmodalcontent/res/jquery/js/jquery.modalContent-0.1.min.js
 
 	# cat=plugin.tx_jfmulticontent/file/100; type=file[css]; label=anythingSlider CSS-File: Location of the default anythingSlider CSS-File
 	file.modalContentCSS = EXT:jfmodalcontent/res/modalContent/style.css
