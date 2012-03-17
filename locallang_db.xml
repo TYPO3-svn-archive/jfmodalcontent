@@ -13,14 +13,21 @@
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.left">Left</label>
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.right">Right</label>
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.bottom">Bottom</label>
-			<label index="tt_content.tx_jfmodalcontent.inDelay">IN - Delay</label>
-			<label index="tt_content.tx_jfmodalcontent.inTransition">IN - Type of transition</label>
-			<label index="tt_content.tx_jfmodalcontent.inTransitiondir">IN - Direction of transition</label>
-			<label index="tt_content.tx_jfmodalcontent.inTransitionduration">IN - Duration of transition (in ms)</label>
-			<label index="tt_content.tx_jfmodalcontent.outDelay">OUT - Delay</label>
-			<label index="tt_content.tx_jfmodalcontent.outTransition">OUT - Type of transition</label>
-			<label index="tt_content.tx_jfmodalcontent.outTransitiondir">OUT - Direction of transition</label>
-			<label index="tt_content.tx_jfmodalcontent.outTransitionduration">OUT - Duration of transition (in ms)</label>
+			<label index="tt_content.tx_jfmodalcontent.content">Content</label>
+			<label index="tt_content.tx_jfmodalcontent.contentWidth">Content width</label>
+
+			<label index="tt_content.tx_jfmodalcontent.sheet_inAnimation">Animation: IN</label>
+			<label index="tt_content.tx_jfmodalcontent.inDelay">Delay</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransition">Type of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransitiondir">Direction of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.inTransitionduration">Duration of transition (in ms)</label>
+
+			<label index="tt_content.tx_jfmodalcontent.sheet_outAnimation">Animation: OUT</label>
+			<label index="tt_content.tx_jfmodalcontent.outDelay">Delay</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransition">Type of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransitiondir">Direction of transition</label>
+			<label index="tt_content.tx_jfmodalcontent.outTransitionduration">Duration of transition (in ms)</label>
+
 			<label index="tt_content.tx_jfmodalcontent.sheet_options">Options</label>
 			<label index="tt_content.tx_jfmodalcontent.options">Insert your own options</label>
 			<label index="tt_content.tx_jfmodalcontent.optionsOverride">Override all options</label>

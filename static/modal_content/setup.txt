@@ -11,6 +11,41 @@ plugin.tx_jfmodalcontent_pi1 {
 	modalContentJS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentJS}
 	modalContentCSS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentCSS}
 
+	config {
+		inAnimation = top
+		content = 
+		contentWidth = 400px
+
+		inDelay = 0
+		inTransition = swing
+		inTransitiondir = 
+		inTransitionduration = 1000
+
+		outDelay = 
+		outTransition = swing
+		outTransitiondir = 
+		outTransitionduration = 1000
+
+		options (
+		)
+		optionsOverride = 0
+	}
+
+	contentWrap {
+		dataWrap = <div id="{register:key}"> | </div>
+	}
+
+	table {
+		tt_content {
+			content = RECORDS
+			content {
+				tables = tt_content
+				source.data = register:content_id
+				dontCheckPid = 1
+			}
+		}
+	}
+
 	_CSS_DEFAULT_STYLE (
 )
 }

@@ -39,7 +39,47 @@
 							</config>
 						</TCEforms>
 					</inAnimation>
-
+					<content>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.content</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>tt_content</allowed>
+								<size>1</size>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+							</config>
+						</TCEforms>
+					</content>
+					<contentWidth>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.contentWidth</label>
+							<config>
+								<type>input</type>
+								<size>16</size>
+								<max>16</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>string</eval>
+							</config>
+						</TCEforms>
+					</contentWidth>
+				</el>
+			</ROOT>
+		</general>
+		
+		
+		
+		<inAnimation>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.sheet_inAnimation</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
 					<inDelay>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -162,7 +202,19 @@
 							</config>
 						</TCEforms>
 					</inTransitionduration>
-
+				</el>
+			</ROOT>
+		</inAnimation>
+		
+		
+		
+		<outAnimation>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.sheet_outAnimation</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
 					<outDelay>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -287,7 +339,10 @@
 					</outTransitionduration>
 				</el>
 			</ROOT>
-		</general>
+		</outAnimation>
+		
+		
+		
 		<special>
 			<ROOT>
 				<TCEforms>

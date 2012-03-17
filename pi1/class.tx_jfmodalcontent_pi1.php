@@ -86,25 +86,66 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		// Plugin or template?
 		if ($this->cObj->data['list_type'] == $this->extKey.'_pi1') {
 			// It's a content, all data from flexform
-			$this->lConf['style'] = $this->getFlexformData('general', 'style');
-			$this->lConf['columnOrder'] = $this->getFlexformData('general', 'columnOrder', in_array($this->lConf['style'], array('2column','3column','4column','5column')));
+			$this->lConf['inAnimation']  = $this->getFlexformData('general', 'inAnimation');
+			$this->lConf['content']      = $this->getFlexformData('general', 'content');
+			$this->lConf['contentWidth'] = $this->getFlexformData('general', 'width');
+
+			$this->lConf['inDelay']              = $this->getFlexformData('inAnimation', 'inDelay');
+			$this->lConf['inTransition']         = $this->getFlexformData('inAnimation', 'inTransition');
+			$this->lConf['inTransitiondir']      = $this->getFlexformData('inAnimation', 'inTransitiondir');
+			$this->lConf['inTransitionduration'] = $this->getFlexformData('inAnimation', 'inTransitionduration');
+
+			$this->lConf['outDelay']              = $this->getFlexformData('inAnimation', 'outDelay');
+			$this->lConf['outTransition']         = $this->getFlexformData('inAnimation', 'outTransition');
+			$this->lConf['outTransitiondir']      = $this->getFlexformData('inAnimation', 'outTransitiondir');
+			$this->lConf['outTransitionduration'] = $this->getFlexformData('inAnimation', 'outTransitionduration');
+
 			$this->lConf['options']         = $this->getFlexformData('special', 'options');
 			$this->lConf['optionsOverride'] = $this->getFlexformData('special', 'optionsOverride');
 
 			// Override the config with flexform data
+			if ($this->lConf['inAnimation']) {
+				$this->conf['config.']['inAnimation'] = $this->lConf['inAnimation'];
+			}
+			if ($this->lConf['content']) {
+				$this->conf['config.']['content'] = $this->lConf['content'];
+			}
+			if ($this->lConf['contentWidth']) {
+				$this->conf['config.']['contentWidth'] = $this->lConf['contentWidth'];
+			}
+
+			// IN
+			if ($this->lConf['inDelay']) {
+				$this->conf['config.']['inDelay'] = $this->lConf['inDelay'];
+			}
 			if ($this->lConf['inTransition']) {
 				$this->conf['config.']['inTransition'] = $this->lConf['inTransition'];
 			}
-			if ($this->lConf['inTransitiondir']) {
+			if ($this->lConf['inTransition']) {
 				$this->conf['config.']['inTransitiondir'] = $this->lConf['inTransitiondir'];
 			}
-			if ($this->lConf['inTransitionduration'] > 0) {
+			if ($this->lConf['inTransitionduration']) {
 				$this->conf['config.']['inTransitionduration'] = $this->lConf['inTransitionduration'];
 			}
+
+			// OUT
+			if ($this->lConf['outDelay']) {
+				$this->conf['config.']['outDelay'] = $this->lConf['outDelay'];
+			}
+			if ($this->lConf['outTransition']) {
+				$this->conf['config.']['outTransition'] = $this->lConf['outTransition'];
+			}
+			if ($this->lConf['outTransition']) {
+				$this->conf['config.']['outTransitiondir'] = $this->lConf['outTransitiondir'];
+			}
+			if ($this->lConf['outTransitionduration']) {
+				$this->conf['config.']['outTransitionduration'] = $this->lConf['outTransitionduration'];
+			}
+
 			// options
 			if ($this->lConf['optionsOverride'] || trim($this->lConf['options'])) {
-				$this->conf['config.'][$this->lConf['style'].'Options'] = $this->lConf['options'];
-				$this->conf['config.'][$this->lConf['style'].'OptionsOverride'] = $this->lConf['optionsOverride'];
+				$this->conf['config.']['options'] = $this->lConf['options'];
+				$this->conf['config.']['optionsOverride'] = $this->lConf['optionsOverride'];
 			}
 
 			// define the key of the element
@@ -123,12 +164,41 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			$jQueryNoConflict = "";
 		}
 
-		$this->pagerenderer->addJS($jQueryNoConflict);
-
 		$options = array();
 
+		if ($this->conf['config.']['inAnimation']) {
+			$options['inAnimation'] = "inAnimation: '{$this->conf['config.']['inAnimation']}'";
+		}
+		if ($this->conf['config.']['contentWidth']) {
+			$this->pagerenderer->addCSS(
+"#{$this->getContentKey()} { 
+	width: {$this->conf['config.']['contentWidth']};
+}");
+		}
 
+		if (is_numeric($this->conf['config.']['inDelay'])) {
+			$options['inDelay'] = "inDelay: '{$this->conf['config.']['inDelay']}'";
+		}
+		if (in_array($this->conf['config.']['inTransition'], array('linear', 'swing'))) {
+			$options['inTransition'] = "inTransition: '{$this->conf['config.']['inTransition']}'";
+		} elseif ($this->conf['config.']['inTransitiondir'] && $this->conf['config.']['inTransition']) {
+			$options['inTransition'] = "inTransition: 'ease{$this->conf['config.']['inTransitiondir']}{$this->conf['config.']['inTransition']}'";
+		}
+		if ($this->conf['config.']['inTransitionduration'] > 0) {
+			$options['inDuration'] = "inDuration: '{$this->conf['config.']['inTransitionduration']}'";
+		}
 
+		if (is_numeric($this->conf['config.']['outDelay'])) {
+			$options['outDelay'] = "outDelay: '{$this->conf['config.']['outDelay']}'";
+		}
+		if (in_array($this->conf['config.']['outTransition'], array('linear', 'swing'))) {
+			$options['outTransition'] = "outTransition: '{$this->conf['config.']['outTransition']}'";
+		} elseif ($this->conf['config.']['outTransitiondir'] && $this->conf['config.']['outTransition']) {
+			$options['outTransition'] = "outTransition: 'ease{$this->conf['config.']['outTransitiondir']}{$this->conf['config.']['outTransition']}'";
+		}
+		if ($this->conf['config.']['outTransitionduration'] > 0) {
+			$options['outDuration'] = "outDuration: '{$this->conf['config.']['outTransitionduration']}'";
+		}
 
 		// overwrite all options if set
 		if ($this->conf['config.']['optionsOverride']) {
@@ -141,10 +211,16 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 
 		// get the Template of the Javascript
 		$markerArray = array();
+		$markerArray["KEY"]     = $this->getContentKey();
+		$markerArray["OPTIONS"] = implode(",\n		", $options);
 		// get the template
-		if (! $templateCode = trim($this->cObj->getSubpart($this->templateFileJS, "###TEMPLATE_TAB_JS###"))) {
-			$templateCode = $this->outputError("Template TEMPLATE_TAB_JS is missing", TRUE);
+		if (! $templateCode = trim($this->cObj->getSubpart($this->templateFileJS, "###TEMPLATE_JS###"))) {
+			$templateCode = $this->outputError("Template TEMPLATE_JS is missing", TRUE);
 		}
+
+		$templateCode = $this->cObj->substituteMarkerArray($templateCode, $markerArray, '###|###', 0);
+
+		$this->pagerenderer->addJS($jQueryNoConflict . $templateCode);
 
 		// Add all CSS and JS files
 		if (T3JQUERY === TRUE) {
@@ -187,6 +263,14 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 	 * @return string
 	 */
 	public function renderTemplate() {
+		// set the register:key for TS manipulation
+		$GLOBALS['TSFE']->register['key']        = $this->getContentKey();
+		$GLOBALS['TSFE']->register['content_id'] = $this->conf['config.']['content'];
+
+		$content = $this->cObj->cObjGetSingle($this->conf['table.']['tt_content.']['content'], $this->conf['table.']['tt_content.']['content.']);
+		$return_string = $this->cObj->stdWrap($content, $this->conf['contentWrap.']);
+
+		return $return_string;
 	}
 
 	/**
