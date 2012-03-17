@@ -44,50 +44,72 @@
 			var animateIn = {};
 			var animateOut = {};
 
-			switch (options.inAnimation) {
-				case 'bottom' :
-					obj.addClass('modalContent-bottom');
-					offset = obj.offset();
-					var hideBottom = $(document).outerHeight() - offset.top;
-					cssHide = {top: hideBottom};
-					animateIn = {top: 0};
-					animateOut = cssHide;
-					break;
-				case 'left' :
-					obj.addClass('modalContent-left');
-					offset = obj.offset();
-					var hideLeft = (obj.outerWidth()*-1) - offset.left;
-					cssHide = {left: hideLeft};
-					animateIn = {left: 0};
-					animateOut = cssHide;
-					break;
-				case 'right' :
-					obj.addClass('modalContent-right');
-					offset = obj.offset();
-					var hideRight = $(document).outerWidth() - offset.left;
-					cssHide = {left: hideRight};
-					animateIn = {left: 0};
-					animateOut = cssHide;
-					break;
-				default : // default = top
-					obj.addClass('modalContent-top');
-					offset = obj.offset();
-					var hideTop = (obj.outerHeight()*-1) - offset.top;
-					cssHide = {top: hideTop};
-					animateIn = {top: 0};
-					animateOut = cssHide;
-					break;
+			if (options.inAnimation == 'fade') {
+				obj.addClass('modalContent-fade');
+				obj.
+					hide().
+					delay(options.inDelay).
+					fadeIn(options.inDuration, options.inTransition).
+					delay(options.outDelay).
+					fadeOut(options.outDuration, options.outTransition, function() {
+						$(this).parent().remove();
+					});
+			} else if (options.inAnimation == 'slide') {
+				obj.addClass('modalContent-slide');
+				obj.
+					hide().
+					delay(options.inDelay).
+					slideDown(options.inDuration, options.inTransition).
+					delay(options.outDelay).
+					slideUp(options.outDuration, options.outTransition, function() {
+						$(this).parent().remove();
+					});
+			} else {
+				switch (options.inAnimation) {
+					case 'bottom' :
+						obj.addClass('modalContent-bottom');
+						offset = obj.offset();
+						var hideBottom = $(document).outerHeight() - offset.top;
+						cssHide = {top: hideBottom};
+						animateIn = {top: 0};
+						animateOut = cssHide;
+						break;
+					case 'left' :
+						obj.addClass('modalContent-left');
+						offset = obj.offset();
+						var hideLeft = (obj.outerWidth()*-1) - offset.left;
+						cssHide = {left: hideLeft};
+						animateIn = {left: 0};
+						animateOut = cssHide;
+						break;
+					case 'right' :
+						obj.addClass('modalContent-right');
+						offset = obj.offset();
+						var hideRight = $(document).outerWidth() - offset.left;
+						cssHide = {left: hideRight};
+						animateIn = {left: 0};
+						animateOut = cssHide;
+						break;
+					default : // default = top
+						obj.addClass('modalContent-top');
+						offset = obj.offset();
+						var hideTop = (obj.outerHeight()*-1) - offset.top;
+						cssHide = {top: hideTop};
+						animateIn = {top: 0};
+						animateOut = cssHide;
+						break;
+				}
+				obj.
+					css(cssHide).
+					hide().
+					delay(options.inDelay).
+					show().
+					animate(animateIn, options.inDuration, options.inTransition).
+					delay(options.outDelay).
+					animate(animateOut, options.outDuration, options.outTransition, function() {
+						$(this).parent().remove();
+					});
 			}
-			obj.
-				css(cssHide).
-				hide().
-				delay(options.inDelay).
-				show().
-				animate(animateIn, options.inDuration, options.inTransition).
-				delay(options.outDelay).
-				animate(animateOut, options.outDuration, options.outTransition, function() {
-					$(this).parent().remove();
-				});
 		});
 	};
 })(jQuery);

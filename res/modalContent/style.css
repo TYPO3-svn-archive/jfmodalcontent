@@ -25,3 +25,10 @@
 .modalContent-right {
 	margin: 100px auto 0;
 }
+.modalContent-fade {
+	margin: 100px auto 0;
+}
+.modalContent-slide {
+	top: 100px;
+	margin: 0 auto;
+}

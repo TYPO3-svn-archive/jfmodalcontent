@@ -13,6 +13,8 @@
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.left">Left</label>
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.right">Right</label>
 			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.bottom">Bottom</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.fade">Fade</label>
+			<label index="tt_content.tx_jfmodalcontent.inAnimation.I.slide">Slide</label>
 			<label index="tt_content.tx_jfmodalcontent.content">Content</label>
 			<label index="tt_content.tx_jfmodalcontent.contentWidth">Content width</label>
 

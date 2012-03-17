@@ -35,6 +35,14 @@
 										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.bottom</numIndex>
 										<numIndex index="1">bottom</numIndex>
 									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.fade</numIndex>
+										<numIndex index="1">fade</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.inAnimation.I.slide</numIndex>
+										<numIndex index="1">slide</numIndex>
+									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
