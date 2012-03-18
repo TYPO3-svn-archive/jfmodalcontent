@@ -33,7 +33,7 @@ plugin.tx_jfmodalcontent_pi1 {
 	}
 
 	contentWrap {
-		dataWrap = <div id="{register:key}"><a class="close" data-dismiss="alert">&times;</a> | </div>
+		dataWrap = <div id="{register:key}" class="modalContent"><a class="close" data-dismiss="alert">&times;</a> | </div>
 	}
 
 	table {

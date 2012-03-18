@@ -1,11 +1,17 @@
+.modalContent-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.7;
+	filter: Alpha(Opacity=70);
+}
 .modalContent-outer {
 	position: absolute;
 	top: 0;
 	left: 0;
 	overflow: hidden;
-	background-color: #000;
-	opacity: 0.7;
-	filter: Alpha(Opacity=70);
+	background-color: transparent;
 }
 .modalContent {
 	position: relative;
@@ -15,6 +21,7 @@
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	display: none;
 }
 .modalContent .close {
 	line-height: 18px;
