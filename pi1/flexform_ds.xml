@@ -75,6 +75,20 @@
 							</config>
 						</TCEforms>
 					</contentWidth>
+					<modalFadeDuration>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.modalFadeDuration</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<max>6</max>
+								<default></default>
+								<checkbox>0</checkbox>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</modalFadeDuration>
 				</el>
 			</ROOT>
 		</general>

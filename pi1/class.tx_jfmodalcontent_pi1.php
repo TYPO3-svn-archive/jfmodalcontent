@@ -86,9 +86,11 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		// Plugin or template?
 		if ($this->cObj->data['list_type'] == $this->extKey.'_pi1') {
 			// It's a content, all data from flexform
-			$this->lConf['inAnimation']  = $this->getFlexformData('general', 'inAnimation');
-			$this->lConf['content']      = $this->getFlexformData('general', 'content');
-			$this->lConf['contentWidth'] = $this->getFlexformData('general', 'contentWidth');
+			$this->lConf['inAnimation']       = $this->getFlexformData('general', 'inAnimation');
+			$this->lConf['content']           = $this->getFlexformData('general', 'content');
+			$this->lConf['contentWidth']      = $this->getFlexformData('general', 'contentWidth');
+			$this->lConf['modalFadeDuration'] = $this->getFlexformData('general', 'modalFadeDuration');
+			
 
 			$this->lConf['inDelay']              = $this->getFlexformData('inAnimation', 'inDelay');
 			$this->lConf['inTransition']         = $this->getFlexformData('inAnimation', 'inTransition');
@@ -112,6 +114,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			}
 			if ($this->lConf['contentWidth']) {
 				$this->conf['config.']['contentWidth'] = $this->lConf['contentWidth'];
+			}
+			if ($this->lConf['modalFadeDuration']) {
+				$this->conf['config.']['modalFadeDuration'] = $this->lConf['modalFadeDuration'];
 			}
 
 			// IN
@@ -175,9 +180,12 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 	width: {$this->conf['config.']['contentWidth']};
 }");
 		}
+		if (is_numeric($this->conf['config.']['modalFadeDuration'])) {
+			$options['modalFadeDuration'] = "modalFadeDuration: {$this->conf['config.']['modalFadeDuration']}";
+		}
 
 		if (is_numeric($this->conf['config.']['inDelay'])) {
-			$options['inDelay'] = "inDelay: '{$this->conf['config.']['inDelay']}'";
+			$options['inDelay'] = "inDelay: {$this->conf['config.']['inDelay']}";
 		}
 		if (in_array($this->conf['config.']['inTransition'], array('linear', 'swing'))) {
 			$options['inTransition'] = "inTransition: '{$this->conf['config.']['inTransition']}'";
@@ -189,7 +197,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		}
 
 		if (is_numeric($this->conf['config.']['outDelay'])) {
-			$options['outDelay'] = "outDelay: '{$this->conf['config.']['outDelay']}'";
+			$options['outDelay'] = "outDelay: {$this->conf['config.']['outDelay']}";
 		}
 		if (in_array($this->conf['config.']['outTransition'], array('linear', 'swing'))) {
 			$options['outTransition'] = "outTransition: '{$this->conf['config.']['outTransition']}'";

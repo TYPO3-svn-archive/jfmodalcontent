@@ -12,6 +12,7 @@
 	$.fn.modalContent = function(opts) {
 		var defaults = {
 			inAnimation: 'top',     // from where will the content slide in (top, right, bottom, right)
+			modalFadeDuration: 200, // fade duration for the modal div
 
 			inDelay: 0,             // wait until the animation begins
 			inTransition: 'swing',  // transition of the inAnimation
@@ -38,31 +39,42 @@
 		});
 
 		return this.each(function() {
-			var obj = $(this);
+			var $obj = $(this);
+			var $parent = $obj.parent();
 			var offset = {};
 			var cssHide = {};
 			var animateIn = {};
 			var animateOut = {};
 
 			if (options.inAnimation == 'fade') {
-				obj.addClass('modalContent-fade');
-				obj.
+				$obj.addClass('modalContent-fade').hide();
+				$parent.
 					hide().
 					delay(options.inDelay).
-					fadeIn(options.inDuration, options.inTransition).
-					delay(options.outDelay).
-					fadeOut(options.outDuration, options.outTransition, function() {
-						$(this).parent().remove();
+					fadeIn(options.modalFadeDuration, function() {
+						$obj.
+							fadeIn(options.inDuration, options.inTransition).
+							delay(options.outDelay).
+							fadeOut(options.outDuration, options.outTransition, function() {
+								$parent.fadeOut(options.modalFadeDuration, function() {
+									$parent.remove();
+								});
+							});
 					});
 			} else if (options.inAnimation == 'slide') {
-				obj.addClass('modalContent-slide');
-				obj.
+				$obj.addClass('modalContent-slide');
+				$parent.
 					hide().
 					delay(options.inDelay).
-					slideDown(options.inDuration, options.inTransition).
-					delay(options.outDelay).
-					slideUp(options.outDuration, options.outTransition, function() {
-						$(this).parent().remove();
+					fadeIn(options.modalFadeDuration, function() {
+						$obj.
+							hide().
+							delay(options.inDelay).
+							slideDown(options.inDuration, options.inTransition).
+							delay(options.outDelay).
+							slideUp(options.outDuration, options.outTransition, function() {
+								$parent.parent().remove();
+							});
 					});
 			} else {
 				switch (options.inAnimation) {
@@ -99,15 +111,20 @@
 						animateOut = cssHide;
 						break;
 				}
-				obj.
-					css(cssHide).
+				$parent.
 					hide().
 					delay(options.inDelay).
-					show().
-					animate(animateIn, options.inDuration, options.inTransition).
-					delay(options.outDelay).
-					animate(animateOut, options.outDuration, options.outTransition, function() {
-						$(this).parent().remove();
+					fadeIn(options.modalFadeDuration, function() {
+						$obj.
+							css(cssHide).
+							hide().
+							delay(options.inDelay).
+							show().
+							animate(animateIn, options.inDuration, options.inTransition).
+							delay(options.outDelay).
+							animate(animateOut, options.outDuration, options.outTransition, function() {
+								$parent.parent().remove();
+							});
 					});
 			}
 		});
