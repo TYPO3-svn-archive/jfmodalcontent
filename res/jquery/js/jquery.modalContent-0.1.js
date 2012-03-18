@@ -6,21 +6,30 @@
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
- * Date: 2012-03-15 21:06:00
+ * Date: 2012-03-18 23:50
  */
-(function($){
+(function($) {
 	$.fn.modalContent = function(opts) {
 		var defaults = {
-			inAnimation: 'top',     // from where will the content slide in (top, right, bottom, right)
-			overlayFadeDuration: 200, // fade duration for the modal div
+			inAnimation: 'top',       // Used animation (top, right, bottom, right, fade, slide)
+			overlayFadeDuration: 200, // fade duration for the overlay div
 
-			inDelay: 0,             // wait until the animation begins
+			inDelay: 0,             // delay in order to show the content
 			inTransition: 'swing',  // transition of the inAnimation
 			inDuration: 1000,       // duration of the inAnimation
 
-			outDelay: 5000,         // time to show the content
+			outDelay: 5000,         // delay in order to hide the content
 			outTransition: 'swing', // transition of the inAnimation
-			outDuration: 1000       // duration of the inAnimation
+			outDuration: 1000,      // duration of the inAnimation
+
+			// Callbacks function (options)
+			onBefore: null, // callback before all starts
+			onBegin: null,  // callback at the begin of the animation
+			onEnd: null,    // callback at the end of the animation
+			onClose: null,  // callback after closing
+
+			disabled: false, // if true, the animation will not start (set it in "onBefore"-callback)
+			debug: false     // console debugging
 		};
 
 		var options = $.extend(defaults, opts);
@@ -32,6 +41,34 @@
 			});
 		});
 
+		$.callOnBefore = function() {
+			var onBefore = options.onBefore;
+			if ($.isFunction(onBefore)) {
+				onBefore(options);
+			}
+		};
+
+		$.callOnBegin = function() {
+			var onBegin = options.onBegin;
+			if ($.isFunction(onBegin)) {
+				onBegin(options);
+			}
+		};
+
+		$.callOnEnd = function() {
+			var onEnd = options.onEnd;
+			if ($.isFunction(onEnd)) {
+				onEnd(options);
+			}
+		};
+
+		$.callOnClose = function() {
+			var onClose = options.onClose;
+			if ($.isFunction(onClose)) {
+				onClose(options);
+			}
+		};
+
 		return this.each(function() {
 			var $obj = $(this);
 			var $parent = $obj.parent();
@@ -39,6 +76,15 @@
 			var cssHide = {};
 			var animateIn = {};
 			var animateOut = {};
+
+			$.callOnBefore();
+
+			if (options.disabled === true) {
+				if (options.debug) {
+					console.log("disabled: true");
+				}
+				return true;
+			}
 
 			if ($('.modalContent-overlay').length < 1) {
 				$('body').append('<div class="modalContent-overlay"></div>');
@@ -57,9 +103,9 @@
 			});
 
 			// close if click element with class "close"
-			$parent.find('.close').bind("click", function(){
+			$parent.find('.close').bind("click", function() {
 				$obj.stop();
-				$overlay.fadeOut(options.overlayFadeDuration, function(){
+				$overlay.fadeOut(options.overlayFadeDuration, function() {
 					$parent.remove();
 				});
 			});
@@ -69,11 +115,14 @@
 				$overlay.
 					delay(options.inDelay).
 					fadeIn(options.overlayFadeDuration, function() {
+						$.callOnBegin();
 						$obj.
 							fadeIn(options.inDuration, options.inTransition).
 							delay(options.outDelay).
 							fadeOut(options.outDuration, options.outTransition, function() {
+								$.callOnEnd();
 								$overlay.fadeOut(options.overlayFadeDuration, function() {
+									$.callOnClose();
 									$parent.remove();
 								});
 							});
@@ -83,11 +132,14 @@
 				$overlay.
 					delay(options.inDelay).
 					fadeIn(options.overlayFadeDuration, function() {
+						$.callOnBegin();
 						$obj.
 							slideDown(options.inDuration, options.inTransition).
 							delay(options.outDelay).
 							slideUp(options.outDuration, options.outTransition, function() {
+								$.callOnEnd();
 								$overlay.fadeOut(options.overlayFadeDuration, function() {
+									$.callOnClose();
 									$parent.remove();
 								});
 							});
@@ -131,18 +183,22 @@
 				$overlay.
 					delay(options.inDelay).
 					fadeIn(options.overlayFadeDuration, function() {
+						$.callOnBegin();
 						$obj.
 							css(cssHide).
 							show().
 							animate(animateIn, options.inDuration, options.inTransition).
 							delay(options.outDelay).
 							animate(animateOut, options.outDuration, options.outTransition, function() {
+								$.callOnEnd();
 								$overlay.fadeOut(options.overlayFadeDuration, function() {
+									$.callOnClose();
 									$parent.remove();
 								});
 							});
 					});
 			}
+			return true;
 		});
 	};
 })(jQuery);

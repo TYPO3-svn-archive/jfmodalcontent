@@ -1,2 +1,2 @@
 script=
-components=jQuery,Core,Easing
+components=jQuery,Core,Easing,Cookie

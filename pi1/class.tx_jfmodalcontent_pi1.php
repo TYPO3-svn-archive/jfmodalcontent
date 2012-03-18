@@ -90,7 +90,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			$this->lConf['content']           = $this->getFlexformData('general', 'content');
 			$this->lConf['contentWidth']      = $this->getFlexformData('general', 'contentWidth');
 			$this->lConf['modalFadeDuration'] = $this->getFlexformData('general', 'modalFadeDuration');
-			
+			$this->lConf['cookieExpires']     = $this->getFlexformData('general', 'cookieExpires');
 
 			$this->lConf['inDelay']              = $this->getFlexformData('inAnimation', 'inDelay');
 			$this->lConf['inTransition']         = $this->getFlexformData('inAnimation', 'inTransition');
@@ -117,6 +117,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			}
 			if ($this->lConf['modalFadeDuration']) {
 				$this->conf['config.']['modalFadeDuration'] = $this->lConf['modalFadeDuration'];
+			}
+			if (is_numeric($this->lConf['cookieExpires'])) {
+				$this->conf['config.']['cookieExpires'] = $this->lConf['cookieExpires'];
 			}
 
 			// IN
@@ -207,6 +210,16 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		if ($this->conf['config.']['outTransitionduration'] > 0) {
 			$options['outDuration'] = "outDuration: '{$this->conf['config.']['outTransitionduration']}'";
 		}
+		$cookie = FALSE;
+		if (is_numeric($this->conf['config.']['cookieExpires'])) {
+			$options['onBefore'] = "onBefore: function(opt){if(jQuery.cookie('{$this->getContentKey()}')){opt.disabled=true;}}";
+			if ($this->conf['config.']['cookieExpires'] > 0) {
+				$options['onClose']  = "onClose: function(opt){if(!jQuery.cookie('{$this->getContentKey()}')){jQuery.cookie('{$this->getContentKey()}',1,{expires:{$this->conf['config.']['cookieExpires']}});}}";
+			} else {
+				$options['onClose']  = "onClose: function(opt){if(!jQuery.cookie('{$this->getContentKey()}')){jQuery.cookie('{$this->getContentKey()}',1);}}";
+			}
+			$cookie = TRUE;
+		}
 
 		// overwrite all options if set
 		if ($this->conf['config.']['optionsOverride']) {
@@ -236,6 +249,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		} else {
 			$this->pagerenderer->addJsFile($this->conf['jQueryLibrary'], TRUE);
 			$this->pagerenderer->addJsFile($this->conf['jQueryEasing']);
+			if ($cookie === TRUE) {
+				$this->pagerenderer->addJsFile($this->conf['jQueryCookies']);
+			}
 		}
 		$this->pagerenderer->addJsFile($this->conf['modalContentJS']);
 		$this->pagerenderer->addCssFile($this->conf['modalContentCSS']);

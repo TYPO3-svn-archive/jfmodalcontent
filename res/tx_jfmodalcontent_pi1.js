@@ -1,6 +1,6 @@
 <!-- ###TEMPLATE_JS### begin -->
 jQuery(document).ready(function() {
-	jQuery('####KEY###').show().modalContent({
+	jQuery('####KEY###').modalContent({
 		###OPTIONS###
 	});
 });

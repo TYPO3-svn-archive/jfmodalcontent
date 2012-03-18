@@ -18,7 +18,7 @@
 			<label index="tt_content.tx_jfmodalcontent.content">Content</label>
 			<label index="tt_content.tx_jfmodalcontent.contentWidth">Content width</label>
 			<label index="tt_content.tx_jfmodalcontent.modalFadeDuration">Modal fade duration (in ms)</label>
-			
+			<label index="tt_content.tx_jfmodalcontent.cookieExpires">Show content every X days (cookie)</label>
 
 			<label index="tt_content.tx_jfmodalcontent.sheet_inAnimation">Animation: IN</label>
 			<label index="tt_content.tx_jfmodalcontent.inDelay">Delay (in ms)</label>

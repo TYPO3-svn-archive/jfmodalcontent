@@ -7,6 +7,7 @@ plugin.tx_jfmodalcontent_pi1 {
 
 	templateFileJS = {$plugin.tx_jfmodalcontent_pi1.file.templateFileJS}
 	jQueryLibrary = {$plugin.tx_jfmodalcontent_pi1.file.jQueryLibrary}
+	jQueryCookies = {$plugin.tx_jfmodalcontent_pi1.file.jQueryCookies}
 	jQueryEasing = {$plugin.tx_jfmodalcontent_pi1.file.jQueryEasing}
 	modalContentJS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentJS}
 	modalContentCSS = {$plugin.tx_jfmodalcontent_pi1.file.modalContentCSS}
@@ -16,6 +17,7 @@ plugin.tx_jfmodalcontent_pi1 {
 		content = 
 		contentWidth = 400px
 		modalFadeDuration = 500
+		cookieExpires = 
 
 		inDelay = 0
 		inTransition = swing
