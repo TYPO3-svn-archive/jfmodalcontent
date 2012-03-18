@@ -11,10 +11,31 @@
 	position: relative;
 	border: 2px solid #BCE8F1;
 	background-color: #D9EDF7;
-	padding: 20px;
+	padding: 8px 35px 8px 14px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+.modalContent .close {
+	line-height: 18px;
+	position: relative;
+	right: -21px;
+	top: -2px;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #000000;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+}
+.modalContent .close:hover {
+	color: #000000;
+	text-decoration: none;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	cursor: pointer;
 }
 .modalContent-top {
 	margin: 100px auto 0;

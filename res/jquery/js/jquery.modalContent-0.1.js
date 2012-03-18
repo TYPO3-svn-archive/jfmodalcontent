@@ -46,6 +46,12 @@
 			var animateIn = {};
 			var animateOut = {};
 
+			// close if click element with class "close"
+			$parent.find('.close').bind("click", function(){
+				$obj.stop();
+				$parent.fadeOut(options.modalFadeDuration).remove();
+			});
+
 			if (options.inAnimation == 'fade') {
 				$obj.addClass('modalContent-fade').hide();
 				$parent.
