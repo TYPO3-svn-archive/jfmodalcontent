@@ -72,10 +72,6 @@
 		return this.each(function() {
 			var $obj = $(this);
 			var $parent = $obj.parent();
-			var offset = {};
-			var cssHide = {};
-			var animateIn = {};
-			var animateOut = {};
 
 			$.callOnBefore();
 
@@ -145,6 +141,11 @@
 							});
 					});
 			} else {
+				var offset = {};
+				var cssHide = {};
+				var animateIn = {};
+				var animateOut = {};
+				$obj.show();
 				switch (options.inAnimation) {
 					case 'bottom' :
 						$obj.addClass('modalContent-bottom');

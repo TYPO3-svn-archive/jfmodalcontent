@@ -180,7 +180,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		if ($this->conf['config.']['contentWidth']) {
 			$this->pagerenderer->addCSS(
 "#{$this->getContentKey()} { 
-	width: {$this->conf['config.']['contentWidth']};
+	width: {$this->conf['config.']['contentWidth']}".(is_numeric($this->conf['config.']['contentWidth']) ? 'px' : '').";
 }");
 		}
 		if (is_numeric($this->conf['config.']['modalFadeDuration'])) {
