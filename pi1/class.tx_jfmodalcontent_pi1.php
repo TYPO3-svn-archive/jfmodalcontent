@@ -287,12 +287,25 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 	 * @return string
 	 */
 	public function renderTemplate() {
+		$table = "tt_content";
+		// Select the content
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', $table, 'uid='.intval($this->conf['config.']['content']), '', '', 1);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		if ($GLOBALS['TSFE']->sys_language_content) {
+			$row = $GLOBALS['TSFE']->sys_page->getRecordOverlay($table, $row, $GLOBALS['TSFE']->sys_language_content, $GLOBALS['TSFE']->sys_language_contentOL);
+		}
+		if (count($row) > 0) {
+			foreach ($row as $key => $val) {
+				$GLOBALS['TSFE']->register['mc-'.$table.'-'.$key] = $val;
+			}
+		}
+
 		// set the register:key for TS manipulation
 		$GLOBALS['TSFE']->register['key']        = $this->getContentKey();
-		$GLOBALS['TSFE']->register['content_id'] = $this->conf['config.']['content'];
+		$GLOBALS['TSFE']->register['content_id'] = ($row['_LOCALIZED_UID'] ? $row['_LOCALIZED_UID'] : $row['uid']);;
 
-		$content = $this->cObj->cObjGetSingle($this->conf['table.']['tt_content.']['content'], $this->conf['table.']['tt_content.']['content.']);
-		$return_string = $this->cObj->stdWrap($content, $this->conf['contentWrap.']);
+		$content = $this->cObj->cObjGetSingle($this->conf['table.'][$table.'.']['content'], $this->conf['table.'][$table.'.']['content.']);
+		$return_string = $this->cObj->stdWrap($content, $this->conf['table.'][$table.'.']['contentWrap.']);
 
 		return $return_string;
 	}

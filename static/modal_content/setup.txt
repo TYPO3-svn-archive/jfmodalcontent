@@ -34,10 +34,6 @@ plugin.tx_jfmodalcontent_pi1 {
 		optionsOverride = 0
 	}
 
-	contentWrap {
-		dataWrap = <div id="{register:key}" class="modalContent"><a class="close" data-dismiss="alert">&times;</a> | </div>
-	}
-
 	table {
 		tt_content {
 			content = RECORDS
@@ -45,6 +41,9 @@ plugin.tx_jfmodalcontent_pi1 {
 				tables = tt_content
 				source.data = register:content_id
 				dontCheckPid = 1
+			}
+			contentWrap {
+				dataWrap = <div id="{register:key}" class="modalContent"><a class="close">&times;</a> | </div>
 			}
 		}
 	}
