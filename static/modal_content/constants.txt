@@ -32,7 +32,7 @@ plugin.tx_jfmodalcontent_pi1 {
 	# cat=plugin.tx_jfmodalcontent/file/060; type=file[js]; label=anythingSlider JS-File: Location of the modalContent JS-file
 	file.modalContentJS = EXT:jfmodalcontent/res/jquery/js/jquery.modalContent-0.1.min.js
 
-	# cat=plugin.tx_jfmulticontent/file/070; type=file[css]; label=anythingSlider CSS-File: Location of the modalContent CSS-File
+	# cat=plugin.tx_jfmodalcontent/file/070; type=file[css]; label=anythingSlider CSS-File: Location of the modalContent CSS-File
 	file.modalContentCSS = EXT:jfmodalcontent/res/modalContent/style.css
 
 }
