@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "jfmodalcontent".
 #
-# Auto generated 15-03-2012 20:01
+# Auto generated 21-03-2012 19:10
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Modal Content',
-	'description' => 'Slide modal contents from top, right, bottom and left side over your website. Use t3jquery for better integration of other jQuery extensions.',
+	'description' => 'Slide modal contents from top, right, bottom and left side over your website. Use t3jquery for better integration of other jQuery extensions. Sponsored by http://www.quadronet.de/',
 	'category' => 'plugin',
 	'author' => 'Juergen Furrer',
 	'author_email' => 'juergen.furrer@gmail.com',
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => '',
-	'version' => '0.0.0',
+	'version' => '0.0.1',
 	'constraints' => array(
 		'depends' => array(
 		),
@@ -38,7 +38,9 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:16:{s:9:"ChangeLog";s:4:"267a";s:10:"README.txt";s:4:"ee2d";s:12:"ext_icon.gif";s:4:"1bdc";s:17:"ext_localconf.php";s:4:"6e4a";s:14:"ext_tables.php";s:4:"01b5";s:13:"locallang.xml";s:4:"09c6";s:16:"locallang_db.xml";s:4:"aeb4";s:19:"doc/wizard_form.dat";s:4:"c859";s:20:"doc/wizard_form.html";s:4:"9fa7";s:14:"pi1/ce_wiz.gif";s:4:"02b6";s:35:"pi1/class.tx_jfmodalcontent_pi1.php";s:4:"e4d2";s:43:"pi1/class.tx_jfmodalcontent_pi1_wizicon.php";s:4:"f84c";s:13:"pi1/clear.gif";s:4:"cc11";s:17:"pi1/locallang.xml";s:4:"099c";s:34:"static/modal_content/constants.txt";s:4:"d41d";s:30:"static/modal_content/setup.txt";s:4:"d41d";}',
+	'_md5_values_when_last_written' => 'a:32:{s:21:"ext_conf_template.txt";s:4:"3930";s:12:"ext_icon.gif";s:4:"c418";s:17:"ext_localconf.php";s:4:"2fcc";s:14:"ext_tables.php";s:4:"66e0";s:13:"locallang.xml";s:4:"5d5c";s:16:"locallang_db.xml";s:4:"0019";s:12:"t3jquery.txt";s:4:"b83e";s:24:"combat/flashmessages.css";s:4:"4e2c";s:20:"combat/gfx/error.png";s:4:"e4dd";s:26:"combat/gfx/information.png";s:4:"3750";s:21:"combat/gfx/notice.png";s:4:"a882";s:17:"combat/gfx/ok.png";s:4:"8bfe";s:22:"combat/gfx/warning.png";s:4:"c847";s:14:"doc/manual.sxw";s:4:"1e90";s:44:"lib/class.tx_jfmodalcontent_pagerenderer.php";s:4:"a92e";s:39:"lib/class.tx_jfmodalcontent_tceFunc.php";s:4:"981b";s:43:"lib/class.tx_jfmodalcontent_tsparserext.php";s:4:"7eca";s:14:"pi1/ce_wiz.gif";s:4:"648a";s:35:"pi1/class.tx_jfmodalcontent_pi1.php";s:4:"32fc";s:43:"pi1/class.tx_jfmodalcontent_pi1_wizicon.php";s:4:"f46d";s:13:"pi1/clear.gif";s:4:"cc11";s:19:"pi1/flexform_ds.xml";s:4:"200e";s:17:"pi1/locallang.xml";s:4:"099c";s:28:"res/tx_jfmodalcontent_pi1.js";s:4:"7441";s:33:"res/jquery/js/jquery-1.7.1.min.js";s:4:"ddb8";s:30:"res/jquery/js/jquery.cookie.js";s:4:"a118";s:34:"res/jquery/js/jquery.easing-1.3.js";s:4:"6516";s:40:"res/jquery/js/jquery.modalContent-0.1.js";s:4:"fcc3";s:44:"res/jquery/js/jquery.modalContent-0.1.min.js";s:4:"7345";s:26:"res/modalContent/style.css";s:4:"2dc0";s:34:"static/modal_content/constants.txt";s:4:"3fd3";s:30:"static/modal_content/setup.txt";s:4:"3123";}',
+	'suggests' => array(
+	),
 );
 
 ?>
