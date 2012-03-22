@@ -91,6 +91,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			$this->lConf['contentWidth']      = $this->getFlexformData('general', 'contentWidth');
 			$this->lConf['modalFadeDuration'] = $this->getFlexformData('general', 'modalFadeDuration');
 			$this->lConf['cookieExpires']     = $this->getFlexformData('general', 'cookieExpires');
+			$this->lConf['closeOnEsc']        = $this->getFlexformData('general', 'closeOnEsc');
 
 			$this->lConf['inDelay']              = $this->getFlexformData('inAnimation', 'inDelay');
 			$this->lConf['inTransition']         = $this->getFlexformData('inAnimation', 'inTransition');
@@ -120,6 +121,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			}
 			if (is_numeric($this->lConf['cookieExpires'])) {
 				$this->conf['config.']['cookieExpires'] = $this->lConf['cookieExpires'];
+			}
+			if ($this->lConf['closeOnEsc'] < 2) {
+				$this->conf['config.']['closeOnEsc'] = $this->lConf['closeOnEsc'];
 			}
 
 			// IN
@@ -186,6 +190,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		if (is_numeric($this->conf['config.']['modalFadeDuration'])) {
 			$options['modalFadeDuration'] = "modalFadeDuration: {$this->conf['config.']['modalFadeDuration']}";
 		}
+		$options['closeOnEsc'] = "closeOnEsc: ".($this->conf['config.']['closeOnEsc'] ? 'true' : 'false');
 
 		if (is_numeric($this->conf['config.']['inDelay'])) {
 			$options['inDelay'] = "inDelay: {$this->conf['config.']['inDelay']}";

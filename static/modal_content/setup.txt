@@ -18,6 +18,7 @@ plugin.tx_jfmodalcontent_pi1 {
 		contentWidth = 400px
 		modalFadeDuration = 500
 		cookieExpires = 
+		closeOnEsc = 0
 
 		inDelay = 0
 		inTransition = swing
