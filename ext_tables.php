@@ -22,6 +22,9 @@ t3lib_extMgm::addPiFlexFormValue($_EXTKEY . '_pi1', 'FILE:EXT:' . $_EXTKEY . '/p
 t3lib_extMgm::addStaticFile($_EXTKEY,'static/modal_content/', 'Modal Content');
 
 
+require_once(t3lib_extMgm::extPath($_EXTKEY).'lib/class.tx_jfmodalcontent_itemsProcFunc.php');
+
+
 if (TYPO3_MODE == 'BE') {
 	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_jfmodalcontent_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'pi1/class.tx_jfmodalcontent_pi1_wizicon.php';
 }

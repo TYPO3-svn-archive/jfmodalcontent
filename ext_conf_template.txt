@@ -5,6 +5,9 @@ frontendErrorMsg = 1
 # cat=basic/enable/20; type=boolean; label=Enable select instead of checkbox: If set, most of checkboxes will turn into selectboxes, so you can choose "from TS"
 useSelectInsteadCheckbox = 0
 
+# cat=basic/enable/30; type=string; label=Available classes: Define the available classes for the content
+availableClasses = ,alert-error,alert-block,alert-success,alert-info
+
 
 
 # cat=basic/dev/1000; type=user[EXT:jfmodalcontent/lib/class.tx_jfmodalcontent_tsparserext.php:tx_jfmodalcontent_tsparserext->displayMessage]; label=Updater

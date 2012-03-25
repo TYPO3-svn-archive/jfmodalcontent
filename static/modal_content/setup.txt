@@ -16,6 +16,7 @@ plugin.tx_jfmodalcontent_pi1 {
 		inAnimation = top
 		content = 
 		contentWidth = 400px
+		contentClass = 
 		modalFadeDuration = 500
 		cookieExpires = 
 		closeOnEsc = 0
@@ -44,7 +45,7 @@ plugin.tx_jfmodalcontent_pi1 {
 				dontCheckPid = 1
 			}
 			contentWrap {
-				dataWrap = <div id="{register:key}" class="modalContent"><a class="close">&times;</a> | </div>
+				dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
 			}
 		}
 	}

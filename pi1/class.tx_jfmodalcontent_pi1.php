@@ -89,6 +89,7 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			$this->lConf['inAnimation']       = $this->getFlexformData('general', 'inAnimation');
 			$this->lConf['content']           = $this->getFlexformData('general', 'content');
 			$this->lConf['contentWidth']      = $this->getFlexformData('general', 'contentWidth');
+			$this->lConf['contentClass']      = $this->getFlexformData('general', 'contentClass');
 			$this->lConf['modalFadeDuration'] = $this->getFlexformData('general', 'modalFadeDuration');
 			$this->lConf['cookieExpires']     = $this->getFlexformData('general', 'cookieExpires');
 			$this->lConf['closeOnEsc']        = $this->getFlexformData('general', 'closeOnEsc');
@@ -115,6 +116,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 			}
 			if ($this->lConf['contentWidth']) {
 				$this->conf['config.']['contentWidth'] = $this->lConf['contentWidth'];
+			}
+			if ($this->lConf['contentClass'] != 'from_ts') {
+				$this->conf['config.']['contentClass'] = $this->lConf['contentClass'];
 			}
 			if ($this->lConf['modalFadeDuration']) {
 				$this->conf['config.']['modalFadeDuration'] = $this->lConf['modalFadeDuration'];
@@ -306,8 +310,9 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 		}
 
 		// set the register:key for TS manipulation
-		$GLOBALS['TSFE']->register['key']        = $this->getContentKey();
-		$GLOBALS['TSFE']->register['content_id'] = ($row['_LOCALIZED_UID'] ? $row['_LOCALIZED_UID'] : $row['uid']);;
+		$GLOBALS['TSFE']->register['key']          = $this->getContentKey();
+		$GLOBALS['TSFE']->register['content_id']   = ($row['_LOCALIZED_UID'] ? $row['_LOCALIZED_UID'] : $row['uid']);
+		$GLOBALS['TSFE']->register['contentClass'] = $this->conf['config.']['contentClass'];
 
 		$content = $this->cObj->cObjGetSingle($this->conf['table.'][$table.'.']['content'], $this->conf['table.'][$table.'.']['content.']);
 		$return_string = $this->cObj->stdWrap($content, $this->conf['table.'][$table.'.']['contentWrap.']);
