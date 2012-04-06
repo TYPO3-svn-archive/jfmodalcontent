@@ -44,9 +44,104 @@ plugin.tx_jfmodalcontent_pi1 {
 				source.data = register:content_id
 				dontCheckPid = 1
 			}
-			contentWrap {
-				dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
+			contentWrap.dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
+		}
+		fe_users {
+			content = RECORDS
+			content {
+				source.data = register:content_id
+				tables = fe_users
+				dontCheckPid = 1
+				conf.fe_users = COA
+				conf.fe_users {
+					10 = TEXT
+					10 {
+						field = username
+						wrap = <strong> | </strong>
+					}
+					20 = TEXT
+					20 {
+						field = email
+						typolink {
+							parameter.field = email
+						}
+						noTrimWrap = |<br />E-Mail: ||
+						required = 1
+					}
+				}
 			}
+			contentWrap.dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
+		}
+		tt_address {
+			content = RECORDS
+			content {
+				source.data = register:content_id
+				tables = tt_address
+				dontCheckPid = 1
+				conf.tt_address = COA
+				conf.tt_address {
+					10 = TEXT
+					10 {
+						field = name
+						wrap = <strong> | </strong>
+					}
+					20 = TEXT
+					20 {
+						field = address
+						wrap = <br /> |
+						required = 1
+					}
+					30 = TEXT
+					30 {
+						field = zip
+						dataWrap = <br /> | &nbsp;{field:city}
+						required = 1
+					}
+				}
+			}
+			contentWrap.dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
+		}
+		tt_news {
+			content = RECORDS
+			content {
+				source.data = register:content_id
+				tables = tt_news
+				dontCheckPid = 1
+				conf.tt_news = COA
+				conf.tt_news {
+					10 = TEXT
+					10 {
+						field = title
+						wrap = <strong>|</strong>
+					}
+					20 = TEXT
+					20 {
+						field = bodytext
+						wrap = <br />|
+						cropHTML = 160|...|1
+						required = 1
+					}
+					30 = TEXT
+					30 {
+						wrap = <br />|
+						htmlSpecialChars = 1
+						data = LLL:EXT:tt_news/pi/locallang.xml:more
+						typolink {
+							parameter = {$plugin.tt_news.singlePid}
+							useCacheHash = 1
+							additionalParams.cObject = COA
+							additionalParams.cObject {
+								10 = TEXT
+								10 {
+									field = uid
+									wrap = &tx_ttnews[tt_news]=|
+								}
+							}  
+						}
+					}
+				}
+			}
+			contentWrap.dataWrap = <div id="{register:key}" class="modalContent {register:contentClass}"><a class="close">&times;</a> | </div>
 		}
 	}
 

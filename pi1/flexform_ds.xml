@@ -53,8 +53,10 @@
 							<label>LLL:EXT:jfmodalcontent/locallang_db.xml:tt_content.tx_jfmodalcontent.content</label>
 							<config>
 								<type>group</type>
+								<form_type>user</form_type>
+								<userFunc><![CDATA[EXT:jfmodalcontent/lib/class.tx_jfmodalcontent_tceFunc.php:&tx_jfmodalcontent_tceFunc->getAllowed]]></userFunc>
 								<internal_type>db</internal_type>
-								<allowed>tt_content</allowed>
+								<allowed>*</allowed>
 								<size>1</size>
 								<minitems>1</minitems>
 								<maxitems>1</maxitems>

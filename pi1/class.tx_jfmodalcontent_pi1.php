@@ -296,9 +296,17 @@ class tx_jfmodalcontent_pi1 extends tslib_pibase
 	 * @return string
 	 */
 	public function renderTemplate() {
-		$table = "tt_content";
+		// set the used table
+		$preg = array();
+		if (preg_match("/(.*)\_([0-9]*)$/", $this->conf['config.']['content'], $preg)) {
+			$table = $preg[1];
+			$uid = $preg[2];
+		} else {
+			$table = "tt_content";
+			$uid = $this->conf['config.']['content'];
+		}
 		// Select the content
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', $table, 'uid='.intval($this->conf['config.']['content']), '', '', 1);
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', $table, 'uid='.intval($uid), '', '', 1);
 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 		if ($GLOBALS['TSFE']->sys_language_content) {
 			$row = $GLOBALS['TSFE']->sys_page->getRecordOverlay($table, $row, $GLOBALS['TSFE']->sys_language_content, $GLOBALS['TSFE']->sys_language_contentOL);

@@ -75,6 +75,7 @@ class tx_jfmodalcontent_tsparserext
 			'frontendErrorMsg',
 			'useSelectInsteadCheckbox',
 			'availableClasses',
+			'allowedDbTypesForContent',
 		);
 		$confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['jfmodalcontent']);
 		foreach ($confDefault as $val) {

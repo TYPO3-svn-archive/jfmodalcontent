@@ -60,6 +60,35 @@ class tx_jfmodalcontent_tceFunc
 		$tceforms = &$PA['pObj'];
 		return $tceforms->getSingleField_SW($PA['table'], $PA['field'], $PA['row'], $PA);
 	}
+
+	/**
+	 * This will render the group db for content (uploadData)
+	 *
+	 * @param	array		$PA An array with additional configuration options.
+	 * @param	object		$fobj TCEForms object reference
+	 * @return	string		The HTML code for the TCEform field
+	 */
+	public function getAllowed($PA, &$fObj)
+	{
+		$confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['jfmodalcontent']);
+		unset($PA['fieldConf']['config']['form_type']);
+		unset($PA['fieldConf']['config']['userFunc']);
+		if ($confArr['allowedDbTypesForContent']) {
+			$PA['fieldConf']['config']['allowed'] = $confArr['allowedDbTypesForContent'];
+		} else {
+			$PA['fieldConf']['config']['allowed'] = 'tt_content,fe_users';
+			if (t3lib_extMgm::isLoaded("tt_news")) {
+				$PA['fieldConf']['config']['allowed'] .= ',tt_news';
+			}
+			if (t3lib_extMgm::isLoaded("tt_address")) {
+				$PA['fieldConf']['config']['allowed'] .= ',tt_address';
+			}
+			
+		}
+		$tceforms = &$PA['pObj'];
+
+		return $tceforms->getSingleField_SW($PA['table'], $PA['field'], $PA['row'], $PA);
+	}
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/jfmodalcontent/lib/class.tx_jfmodalcontent_tceFunc.php']) {

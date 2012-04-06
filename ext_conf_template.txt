@@ -8,6 +8,9 @@ useSelectInsteadCheckbox = 0
 # cat=basic/enable/30; type=string; label=Available classes: Define the available classes for the content
 availableClasses = ,alert-error,alert-block,alert-success,alert-info
 
+# cat=basic/enable/40; type=string; label=Allowed DB-Types for content: Sets the allowed DB-Types for content (tt_content,fe_users,tt_news,tt_address)
+allowedDbTypesForContent = 
+
 
 
 # cat=basic/dev/1000; type=user[EXT:jfmodalcontent/lib/class.tx_jfmodalcontent_tsparserext.php:tx_jfmodalcontent_tsparserext->displayMessage]; label=Updater
