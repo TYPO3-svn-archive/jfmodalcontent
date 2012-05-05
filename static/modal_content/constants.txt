@@ -21,7 +21,7 @@ plugin.tx_jfmodalcontent_pi1 {
 	file.templateFileJS = EXT:jfmodalcontent/res/tx_jfmodalcontent_pi1.js
 
 	# cat=plugin.tx_jfmodalcontent/file/030; type=file[js]; label=jQuery Library: Location of the jQuery Lib
-	file.jQueryLibrary = EXT:jfmodalcontent/res/jquery/js/jquery-1.7.1.min.js
+	file.jQueryLibrary = EXT:jfmodalcontent/res/jquery/js/jquery-1.7.2.min.js
 
 	# cat=plugin.tx_jfmodalcontent/file/040; type=file[js]; label=jQuery Cookies: Location of jQuery Cookies
 	file.jQueryCookies = EXT:jfmodalcontent/res/jquery/js/jquery.cookie.js
