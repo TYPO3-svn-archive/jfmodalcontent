@@ -43,9 +43,9 @@ class tx_jfmodalcontent_pi1_wizicon
 	 * @param	array		$wizardItems: The wizard items
 	 * @return	Modified array with wizard items
 	 */
-	function proc($wizardItems) {
+	function proc($wizardItems)
+	{
 		$LL = $this->includeLocalLang();
-
 		$wizardItems['plugins_tx_jfmodalcontent_pi1'] = array(
 			'icon' => t3lib_extMgm::extRelPath('jfmodalcontent') . 'pi1/ce_wiz.gif',
 			'title' => $GLOBALS['LANG']->getLLL('pi1_title', $LL),
@@ -61,9 +61,14 @@ class tx_jfmodalcontent_pi1_wizicon
 	 *
 	 * @return	The array with language labels
 	 */
-	function includeLocalLang()	{
+	function includeLocalLang()
+	{
 		$llFile = t3lib_extMgm::extPath('jfmodalcontent') . 'locallang.xml';
-		$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+		if (class_exists(t3lib_l10n_parser_Llxml)) {
+			$LOCAL_LANG = t3lib_l10n_parser_Llxml::getParsedData($llFile, $GLOBALS['LANG']->lang);
+		} else {
+			$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+		}
 
 		return $LOCAL_LANG;
 	}
